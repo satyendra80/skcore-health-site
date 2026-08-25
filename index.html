@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="SKCore Health Technologies — AI-enabled healthcare products, IT enablement, and consulting services. Nine integrated products: COMS, PHR, MHA, LIS, RIS, CyberSecure, Connect, AI Governance, Compliances."/>
+  <meta name="theme-color" content="#061a2d"/>
+  <meta property="og:title" content="SKCore Health Technologies | AI-Enabled Healthcare"/>
+  <meta property="og:description" content="Nine integrated healthcare products. AI at the core. Built for the future of Indian healthcare."/>
+  <meta property="og:type" content="website"/>
+  <title>SKCore Health Technologies | AI-Enabled Healthcare OS</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────────────────────────────────────── -->
+<header class="site-header">
+  <a class="brand" href="/" aria-label="SKCore Health Technologies home">
+    <div class="brand-mark">SK</div>
+    <div class="brand-text"><strong>SKCore</strong><small>Health Technologies</small></div>
+  </a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">☰</button>
+  <nav id="site-nav" class="site-nav">
+    <div class="nav-products-toggle">
+      <a href="#products" style="display:flex;align-items:center;gap:5px">Products <span style="font-size:10px">▾</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dd-item" href="products/coms.html"><span class="nav-dd-icon" style="background:#e8f4ff">🧬</span>SKCore COMS</a>
+        <a class="nav-dd-item" href="products/phr.html"><span class="nav-dd-icon" style="background:#f0fff4">📱</span>SKCore PHR</a>
+        <a class="nav-dd-item" href="products/mha.html"><span class="nav-dd-icon" style="background:#fdf4ff">🧠</span>SKCore MHA</a>
+        <a class="nav-dd-item" href="products/lis.html"><span class="nav-dd-icon" style="background:#fffbeb">🔬</span>SKCore LIS</a>
+        <a class="nav-dd-item" href="products/ris.html"><span class="nav-dd-icon" style="background:#fff7ed">📡</span>SKCore RIS</a>
+        <a class="nav-dd-item" href="products/cybersecure.html"><span class="nav-dd-icon" style="background:#fef2f2">🛡️</span>SKCore CyberSecure</a>
+        <a class="nav-dd-item" href="products/connect.html"><span class="nav-dd-icon" style="background:#ecfdf5">🔗</span>SKCore Connect</a>
+        <a class="nav-dd-item" href="products/ai-governance.html"><span class="nav-dd-icon" style="background:#eef2ff">✦</span>AI Governance</a>
+        <a class="nav-dd-item" href="products/compliances.html"><span class="nav-dd-icon" style="background:#f0fdf4">✅</span>Compliances</a>
+      </div>
+    </div>
+    <a href="services.html">Services</a>
+    <a href="#ai">AI Platform</a>
+    <a href="about.html">About</a>
+    <a class="nav-cta" href="#contact">Book Demo</a>
+  </nav>
+</header>
+
+<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      AI-Enabled · ABDM Certified · DPDP 2023 Compliant
+    </div>
+    <h1>The Future of Healthcare<br/><span>Runs on AI</span></h1>
+    <p class="hero-lead">SKCore Health Technologies delivers AI-powered healthcare products, digital transformation services, and expert consulting — purpose-built for Indian hospitals, clinics, and healthcare networks.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#products">Explore Platform →</a>
+      <a class="btn btn-outline" href="#contact">Book a Demo</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>9</strong><span>Integrated Products</span></div>
+      <div class="hero-stat"><strong>FHIR R4</strong><span>Open Standards</span></div>
+      <div class="hero-stat"><strong>ABDM</strong><span>HIU + HIP Certified</span></div>
+      <div class="hero-stat"><strong>AI</strong><span>Advisory-Only Governance</span></div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="ai-hub">
+      <div class="ai-ring ai-ring-1"></div>
+      <div class="ai-ring ai-ring-2"></div>
+      <div class="ai-ring ai-ring-3"></div>
+      <div class="ai-core"><span>SKCore</span><b>AI</b><span style="font-size:10px;color:rgba(255,255,255,.6)">Platform</span></div>
+      <div class="ai-node ai-node-1" data-label="COMS"><span class="nd-icon">🧬</span>COMS</div>
+      <div class="ai-node ai-node-2" data-label="PHR"><span class="nd-icon">📱</span>PHR</div>
+      <div class="ai-node ai-node-3" data-label="LIS"><span class="nd-icon">🔬</span>LIS</div>
+      <div class="ai-node ai-node-4" data-label="RIS"><span class="nd-icon">📡</span>RIS</div>
+      <div class="ai-node ai-node-5" data-label="CyberSecure"><span class="nd-icon">🛡️</span>Secure</div>
+      <div class="ai-node ai-node-6" data-label="MHA"><span class="nd-icon">🧠</span>MHA</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ───────────────────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num" data-target="9" data-suffix="+">9+</span><span class="stat-label">Healthcare Products</span></div>
+  <div class="stat-item"><span class="stat-num" data-target="1904">1904</span><span class="stat-label">Oncology Regimens</span></div>
+  <div class="stat-item"><span class="stat-num" data-target="17">17</span><span class="stat-label">PHR Features</span></div>
+  <div class="stat-item"><span class="stat-num" data-target="161">161</span><span class="stat-label">AI Agents in Enterprise OS</span></div>
+  <div class="stat-item"><span class="stat-num" data-target="0">0</span><span class="stat-label">AI Auto-Saves Without Approval</span></div>
+</div>
+
+<!-- ── PRODUCTS ─────────────────────────────────────────────────────────────── -->
+<section class="products-section" id="products">
+  <div class="products-intro fade-up">
+    <span class="eyebrow eyebrow-blue">Nine Integrated Products</span>
+    <h2>One Platform. Complete Healthcare.</h2>
+    <p>From oncology order management to personal health records, laboratory workflows to cybersecurity — every SKCore product is AI-augmented, ABDM-certified, and built to work together as a single enterprise OS.</p>
+  </div>
+  <div class="products-grid">
+
+    <a class="product-card fade-up stagger-1" href="products/coms.html" style="--grad-a:#0d72ae;--grad-b:#0d4a7a">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#e8f4ff">🧬</div>
+        <span class="pc-badge" style="background:#e8f4ff;color:#0d72ae">Oncology</span>
+      </div>
+      <div class="pc-name">SKCore COMS</div>
+      <p class="pc-desc">Comprehensive Oncology Management System — 1,904 protocol regimens, BSA dose calculation, 6-gate safety verification, AI order review, radiation therapy, QOPI quality reporting, and mCODE FHIR R4 export.</p>
+      <div class="pc-tags"><span class="pc-tag">Chemotherapy</span><span class="pc-tag">AI Order Review</span><span class="pc-tag">FHIR R4</span></div>
+      <span class="pc-arrow">View COMS →</span>
+    </a>
+
+    <a class="product-card fade-up stagger-2" href="products/phr.html" style="--grad-a:#22c55e;--grad-b:#15803d">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#f0fff4">📱</div>
+        <span class="pc-badge" style="background:#f0fff4;color:#15803d">Personal Health</span>
+      </div>
+      <div class="pc-name">SKCore PHR</div>
+      <p class="pc-desc">Personal Health Record for every patient — 17 features covering labs, medications, ePRO symptoms, womens health, dental, AI health assistant, wearable device sync, ABHA-linked records, elder care, and child health.</p>
+      <div class="pc-tags"><span class="pc-tag">ABHA Linked</span><span class="pc-tag">Wearables</span><span class="pc-tag">All Patients</span></div>
+      <span class="pc-arrow">View PHR →</span>
+    </a>
+
+    <a class="product-card fade-up stagger-3" href="products/mha.html" style="--grad-a:#6c4fd4;--grad-b:#4338ca">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#fdf4ff">🧠</div>
+        <span class="pc-badge" style="background:#fdf4ff;color:#6c4fd4">Mental Health</span>
+      </div>
+      <div class="pc-name">SKCore MHA</div>
+      <p class="pc-desc">Mental Health App for psycho-oncology and general psychiatric care — NCG distress screening, ESAS assessments, mood journaling, video counselling, crisis escalation, and AI-powered sentiment analysis.</p>
+      <div class="pc-tags"><span class="pc-tag">NCG Screening</span><span class="pc-tag">Telepsychiatry</span><span class="pc-tag">Crisis Care</span></div>
+      <span class="pc-arrow">View MHA →</span>
+    </a>
+
+    <a class="product-card fade-up stagger-1" href="products/lis.html" style="--grad-a:#f59e0b;--grad-b:#b45309">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#fffbeb">🔬</div>
+        <span class="pc-badge" style="background:#fffbeb;color:#b45309">Laboratory</span>
+      </div>
+      <div class="pc-name">SKCore LIS</div>
+      <p class="pc-desc">Laboratory Information System — sample registration, worklist management, result validation, critical value auto-alerting, ABHA push on sign-off, NABL audit trail, and HL7 v2 / FHIR DiagnosticReport output.</p>
+      <div class="pc-tags"><span class="pc-tag">Critical Alerts</span><span class="pc-tag">NABL Ready</span><span class="pc-tag">HL7 v2</span></div>
+      <span class="pc-arrow">View LIS →</span>
+    </a>
+
+    <a class="product-card fade-up stagger-2" href="products/ris.html" style="--grad-a:#ea580c;--grad-b:#9a3412">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#fff7ed">📡</div>
+        <span class="pc-badge" style="background:#fff7ed;color:#9a3412">Radiology</span>
+      </div>
+      <div class="pc-name">SKCore RIS</div>
+      <p class="pc-desc">Radiology Information System — imaging order management, DICOM viewer integration, AI-assisted anomaly flagging for lung nodules and masses, report TAT tracking, and FHIR ImagingStudy export.</p>
+      <div class="pc-tags"><span class="pc-tag">AI Anomaly Detection</span><span class="pc-tag">DICOM</span><span class="pc-tag">FHIR</span></div>
+      <span class="pc-arrow">View RIS →</span>
+    </a>
+
+    <a class="product-card fade-up stagger-3" href="products/cybersecure.html" style="--grad-a:#ef4444;--grad-b:#991b1b">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#fef2f2">🛡️</div>
+        <span class="pc-badge" style="background:#fef2f2;color:#991b1b">Cybersecurity</span>
+      </div>
+      <div class="pc-name">SKCore CyberSecure</div>
+      <p class="pc-desc">Healthcare cybersecurity platform — ABDM-aware SIEM, IoMT device monitoring, DPDP Act 2023 compliance automation, AI-native SOAR auto-response playbooks, and a 24×7 healthcare-specific SOC.</p>
+      <div class="pc-tags"><span class="pc-tag">DPDP 2023</span><span class="pc-tag">IoMT</span><span class="pc-tag">SOAR AI</span></div>
+      <span class="pc-arrow">View CyberSecure →</span>
+    </a>
+
+    <a class="product-card fade-up stagger-1" href="products/connect.html" style="--grad-a:#0d9488;--grad-b:#065f46">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#ecfdf5">🔗</div>
+        <span class="pc-badge" style="background:#ecfdf5;color:#065f46">Interoperability</span>
+      </div>
+      <div class="pc-name">SKCore Connect</div>
+      <p class="pc-desc">Interoperability gateway — ABDM certified HIU + HIP, FHIR R4 mCODE export, HL7 v2 inbound/outbound, DICOM-RIS sync, OIS radiation integration, SMART on FHIR for third-party apps. No lock-in.</p>
+      <div class="pc-tags"><span class="pc-tag">ABDM HIU+HIP</span><span class="pc-tag">SMART on FHIR</span><span class="pc-tag">Open Standards</span></div>
+      <span class="pc-arrow">View Connect →</span>
+    </a>
+
+    <a class="product-card fade-up stagger-2" href="products/ai-governance.html" style="--grad-a:#4f46e5;--grad-b:#312e81">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#eef2ff">✦</div>
+        <span class="pc-badge" style="background:#eef2ff;color:#4338ca">AI Ethics</span>
+      </div>
+      <div class="pc-name">SKCore AI Governance</div>
+      <p class="pc-desc">Responsible AI framework across the platform — advisory-only architecture, PHI de-identification before external API calls, per-hospital model configuration, bias monitoring, and a full AI audit trail.</p>
+      <div class="pc-tags"><span class="pc-tag">Advisory Only</span><span class="pc-tag">PHI De-ID</span><span class="pc-tag">Bias Monitoring</span></div>
+      <span class="pc-arrow">View AI Gov →</span>
+    </a>
+
+    <a class="product-card fade-up stagger-3" href="products/compliances.html" style="--grad-a:#16a34a;--grad-b:#14532d">
+      <div class="pc-header">
+        <div class="pc-icon" style="background:#f0fdf4">✅</div>
+        <span class="pc-badge" style="background:#f0fdf4;color:#14532d">Regulatory</span>
+      </div>
+      <div class="pc-name">SKCore Compliances</div>
+      <p class="pc-desc">Regulatory quality engine — NABH and NABL accreditation checklists, CDSCO SaMD documentation, DPDP Act tracking, QOPI quality measure reporting, NCG and ICMR guideline integration, audit-ready exports.</p>
+      <div class="pc-tags"><span class="pc-tag">NABH</span><span class="pc-tag">CDSCO SaMD</span><span class="pc-tag">QOPI</span></div>
+      <span class="pc-arrow">View Compliances →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── AI PLATFORM ───────────────────────────────────────────────────────── -->
+<section class="ai-section" id="ai">
+  <div class="ai-intro fade-up">
+    <span class="eyebrow eyebrow-cyan">AI Platform</span>
+    <h2>AI at the Core of Everything We Build</h2>
+    <p>Every SKCore product is AI-augmented — but AI is always advisory, never autonomous. Our governance framework ensures clinicians remain in control while AI accelerates insight, safety, and efficiency.</p>
+  </div>
+
+  <div class="ai-grid">
+    <div class="ai-card fade-up stagger-1">
+      <div class="ai-card-icon">🔍</div>
+      <h4>AI-Assisted Clinical Decision Support</h4>
+      <p>Real-time AI suggestions across chemotherapy order review, pre-cycle lab assessment, end-of-treatment summary drafting, and radiology anomaly flagging — all advisory, all auditable.</p>
+      <ul>
+        <li>Chemotherapy order safety review</li>
+        <li>Pre-cycle lab narrative generation</li>
+        <li>Radiology nodule flagging</li>
+        <li>Mental health sentiment analysis</li>
+      </ul>
+    </div>
+    <div class="ai-card fade-up stagger-2">
+      <div class="ai-card-icon">🤖</div>
+      <h4>Enterprise AI Agent Workforce</h4>
+      <p>SKCore Enterprise OS deploys 161 AI agents across 15 departments — clinical, regulatory, engineering, finance, HR, and executive — automating repetitive workflows while keeping humans accountable.</p>
+      <ul>
+        <li>161 specialized AI agents</li>
+        <li>15 department coverage</li>
+        <li>LLM routing: Opus → Sonnet → Haiku</li>
+        <li>Per-department token budget controls</li>
+      </ul>
+    </div>
+    <div class="ai-card fade-up stagger-3">
+      <div class="ai-card-icon">🛡️</div>
+      <h4>AI Governance & Ethics</h4>
+      <p>Every AI feature is gated by SKCore AI Governance — advisory-only architecture, PHI de-identification before all external API calls, bias monitoring, and a complete audit trail of every suggestion made.</p>
+      <ul>
+        <li>Zero AI auto-saves without human approval</li>
+        <li>PHI stripped before model inference</li>
+        <li>Per-hospital AI configuration</li>
+        <li>Bias monitoring dashboard</li>
+      </ul>
+    </div>
+    <div class="ai-card fade-up stagger-1">
+      <div class="ai-card-icon">🔬</div>
+      <h4>AI-Native Security Operations</h4>
+      <p>SKCore CyberSecure uses AI-native SOAR playbooks to auto-contain ransomware, detect HL7/FHIR API anomalies, monitor 47+ IoMT devices, and enforce DPDP Act 2023 consent workflows at machine speed.</p>
+      <ul>
+        <li>4.2-minute ransomware auto-response</li>
+        <li>IoMT device behaviour baselining</li>
+        <li>ABDM consent anomaly detection</li>
+        <li>Zero-trust microsegmentation</li>
+      </ul>
+    </div>
+    <div class="ai-card fade-up stagger-2">
+      <div class="ai-card-icon">📊</div>
+      <h4>Population Health Intelligence</h4>
+      <p>Cross-hospital analytics aggregates clinical outcomes, drug utilisation, QOPI quality scores, and financial performance — giving medical leadership AI-powered benchmarking and trend detection at network scale.</p>
+      <ul>
+        <li>Toxicity trend analysis by cancer type</li>
+        <li>QOPI quality measure automation</li>
+        <li>Drug utilisation variance alerts</li>
+        <li>Revenue cycle intelligence</li>
+      </ul>
+    </div>
+    <div class="ai-card fade-up stagger-3">
+      <div class="ai-card-icon">🌐</div>
+      <h4>AI-Powered Interoperability</h4>
+      <p>SKCore Connect uses AI to transform, validate, and route HL7 v2 messages, FHIR resources, and DICOM metadata — enabling seamless data exchange between legacy systems, ABDM, and modern FHIR APIs.</p>
+      <ul>
+        <li>Intelligent HL7-to-FHIR mapping</li>
+        <li>Smart consent management</li>
+        <li>FHIR resource validation AI</li>
+        <li>Auto-routing by data type</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ai-principles">
+    <div class="ai-principle fade-up stagger-1">
+      <div class="ap-icon">🎯</div>
+      <h5>Advisory Only</h5>
+      <p>AI suggests. Clinicians decide. Every time.</p>
+    </div>
+    <div class="ai-principle fade-up stagger-2">
+      <div class="ap-icon">🔒</div>
+      <h5>PHI Protected</h5>
+      <p>De-identified before any external model call.</p>
+    </div>
+    <div class="ai-principle fade-up stagger-3">
+      <div class="ap-icon">📋</div>
+      <h5>Fully Auditable</h5>
+      <p>Every AI output logged — accepted, modified, or rejected.</p>
+    </div>
+    <div class="ai-principle fade-up stagger-4">
+      <div class="ap-icon">⚖️</div>
+      <h5>Bias Monitored</h5>
+      <p>Continuous monitoring for demographic and clinical bias.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── IT ENABLEMENT ─────────────────────────────────────────────────────── -->
+<section class="it-section" id="services">
+  <div class="it-grid">
+    <div>
+      <span class="eyebrow eyebrow-blue fade-up">IT Enablement</span>
+      <h2 class="fade-up">Digital Transformation for Healthcare</h2>
+      <p class="fade-up" style="color:var(--muted);font-size:17px;margin:16px 0 28px">We help hospitals and healthcare networks move from paper and legacy systems to a fully digital, AI-ready infrastructure — with zero disruption to patient care.</p>
+      <div class="it-features fade-up">
+        <div class="it-feature">
+          <h5>ABDM Integration</h5>
+          <p>ABHA ID verification, HIP/HIU onboarding, consent management, and FHIR health record exchange fully implemented.</p>
+        </div>
+        <div class="it-feature">
+          <h5>Legacy System Migration</h5>
+          <p>HL7 v2 to FHIR R4 transformation, FileMan modernisation, and phased data migration with zero-downtime rollover.</p>
+        </div>
+        <div class="it-feature">
+          <h5>Cloud & On-Premise</h5>
+          <p>Docker-based deployment on AWS, Azure, GCP, or on-premise — with automated backup, DR, and monitoring built in.</p>
+        </div>
+        <div class="it-feature">
+          <h5>Staff Training & Onboarding</h5>
+          <p>Role-based training programs for doctors, nurses, pharmacists, lab technicians, and administrators.</p>
+        </div>
+      </div>
+    </div>
+    <div class="it-visual fade-up">
+      <div class="it-pill">
+        <div class="it-pill-icon" style="background:#e8f4ff">🏥</div>
+        <div><h5>Hospital EHR Connected</h5><p>FHIR R4 endpoint live — 12 systems integrated</p></div>
+      </div>
+      <div class="it-pill">
+        <div class="it-pill-icon" style="background:#f0fdf4">🔗</div>
+        <div><h5>ABDM HIU + HIP Active</h5><p>284 patient consents linked via ABHA</p></div>
+      </div>
+      <div class="it-pill">
+        <div class="it-pill-icon" style="background:#fdf4ff">🤖</div>
+        <div><h5>AI Governance Enabled</h5><p>312 suggestions this month — 0 auto-saved</p></div>
+      </div>
+      <div class="it-pill">
+        <div class="it-pill-icon" style="background:#fffbeb">📊</div>
+        <div><h5>Analytics Pipeline Live</h5><p>9 products · 4 hospitals · real-time KPIs</p></div>
+      </div>
+      <div class="it-pill">
+        <div class="it-pill-icon" style="background:#fef2f2">🛡️</div>
+        <div><h5>SOC Monitoring Active</h5><p>2,847 events analysed · 0 breaches · DPDP 96%</p></div>
+      </div>
+      <div class="it-pill">
+        <div class="it-pill-icon" style="background:#ecfdf5">✅</div>
+        <div><h5>NABH Checklist: 94%</h5><p>Audit pack downloadable on demand</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONSULTING ─────────────────────────────────────────────────────────── -->
+<section class="consulting-section" id="consulting">
+  <div class="fade-up">
+    <span class="eyebrow eyebrow-purple">Consulting Services</span>
+    <h2>Expert Guidance at Every Stage</h2>
+    <p style="color:var(--muted);font-size:17px;margin-top:14px;max-width:640px">From regulatory strategy to go-live support, our healthcare IT consultants bring deep clinical, technical, and compliance expertise to every engagement.</p>
+  </div>
+  <div class="consulting-grid">
+    <div class="consulting-card fade-up stagger-1">
+      <div class="cc-icon" style="background:#e8f4ff">📋</div>
+      <h4>Regulatory &amp; Compliance Advisory</h4>
+      <p>Navigate NABH, NABL, CDSCO SaMD, and DPDP Act requirements with confidence.</p>
+      <ul>
+        <li>NABH &amp; NABL accreditation preparation</li>
+        <li>CDSCO SaMD technical documentation</li>
+        <li>DPDP Act 2023 gap assessment</li>
+        <li>QOPI quality measure implementation</li>
+        <li>ISO 27001 readiness review</li>
+      </ul>
+    </div>
+    <div class="consulting-card fade-up stagger-2">
+      <div class="cc-icon" style="background:#fdf4ff">🤖</div>
+      <h4>AI Strategy for Healthcare</h4>
+      <p>Build a responsible, high-impact AI roadmap aligned with your clinical and operational goals.</p>
+      <ul>
+        <li>AI readiness assessment</li>
+        <li>Use-case identification &amp; prioritisation</li>
+        <li>LLM selection and integration planning</li>
+        <li>AI governance framework design</li>
+        <li>Bias monitoring and audit setup</li>
+      </ul>
+    </div>
+    <div class="consulting-card fade-up stagger-3">
+      <div class="cc-icon" style="background:#f0fff4">🔗</div>
+      <h4>Interoperability &amp; ABDM</h4>
+      <p>Connect your hospital to India's national digital health ecosystem and open FHIR standards.</p>
+      <ul>
+        <li>ABDM HIU &amp; HIP onboarding</li>
+        <li>ABHA ID integration &amp; verification</li>
+        <li>HL7 v2 to FHIR R4 migration</li>
+        <li>SMART on FHIR app development</li>
+        <li>Consent management design</li>
+      </ul>
+    </div>
+    <div class="consulting-card fade-up stagger-1">
+      <div class="cc-icon" style="background:#fef2f2">🛡️</div>
+      <h4>Healthcare Cybersecurity</h4>
+      <p>Protect patient data and clinical infrastructure with healthcare-specific security architecture.</p>
+      <ul>
+        <li>DPDP Act 2023 compliance roadmap</li>
+        <li>IoMT device security assessment</li>
+        <li>SIEM and SOAR implementation</li>
+        <li>Penetration testing (HL7, FHIR APIs)</li>
+        <li>Incident response planning</li>
+      </ul>
+    </div>
+    <div class="consulting-card fade-up stagger-2">
+      <div class="cc-icon" style="background:#fffbeb">🏥</div>
+      <h4>Digital Hospital Design</h4>
+      <p>Design the complete digital infrastructure for new hospitals or greenfield cancer centres.</p>
+      <ul>
+        <li>HIT architecture blueprint</li>
+        <li>Vendor selection &amp; RFP support</li>
+        <li>Network and cloud topology design</li>
+        <li>Go-live programme management</li>
+        <li>Change management &amp; training</li>
+      </ul>
+    </div>
+    <div class="consulting-card fade-up stagger-3">
+      <div class="cc-icon" style="background:#ecfdf5">📊</div>
+      <h4>Clinical Analytics &amp; Outcomes</h4>
+      <p>Turn raw hospital data into actionable insights that improve care quality and financial performance.</p>
+      <ul>
+        <li>QOPI quality reporting setup</li>
+        <li>Toxicity and outcome benchmarking</li>
+        <li>Revenue cycle analytics</li>
+        <li>Population health dashboard design</li>
+        <li>Executive KPI reporting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── FUTURE OF AI ───────────────────────────────────────────────────────── -->
+<section class="future-section" id="future">
+  <span class="eyebrow eyebrow-cyan fade-up">Roadmap</span>
+  <h2 class="fade-up">The Future We Are Building</h2>
+  <p class="fade-up">AI in healthcare is not a feature — it is the foundation. Here is where SKCore is taking the platform over the next three years.</p>
+  <div class="future-grid">
+    <div class="future-card fade-up stagger-1">
+      <span class="fc-year">2025 — NOW</span>
+      <h4>AI-Assisted Clinical Decisions</h4>
+      <p>Advisory AI across chemotherapy order review, lab interpretation, EoTS drafting, and radiology anomaly flagging — deployed and live.</p>
+    </div>
+    <div class="future-card fade-up stagger-2">
+      <span class="fc-year">2026 — IN PROGRESS</span>
+      <h4>Predictive Population Health</h4>
+      <p>AI models predicting treatment toxicity, hospital readmission risk, medication non-adherence, and disease progression at a population level.</p>
+    </div>
+    <div class="future-card fade-up stagger-3">
+      <span class="fc-year">2026 — IN PROGRESS</span>
+      <h4>Genomics &amp; Precision Medicine</h4>
+      <p>Pharmacogenomics (PGx) integration, tumour mutational burden analysis, and AI-driven treatment matching to genomic profiles.</p>
+    </div>
+    <div class="future-card fade-up stagger-4">
+      <span class="fc-year">2027 — PLANNED</span>
+      <h4>Autonomous Hospital Operations</h4>
+      <p>161-agent Enterprise OS handling scheduling, procurement, HR workflows, regulatory submissions, and financial reconciliation with minimal human intervention.</p>
+    </div>
+    <div class="future-card fade-up stagger-1">
+      <span class="fc-year">2027 — PLANNED</span>
+      <h4>Federated Learning Across Networks</h4>
+      <p>Multi-hospital AI model training without sharing patient data — federated learning for oncology outcome models across India's cancer centre network.</p>
+    </div>
+    <div class="future-card fade-up stagger-2">
+      <span class="fc-year">2027 — PLANNED</span>
+      <h4>AI-Native Drug Discovery Support</h4>
+      <p>Clinical trial matching, biomarker identification, and real-world evidence generation to support pharmaceutical R&amp;D and ICMR research partnerships.</p>
+    </div>
+    <div class="future-card fade-up stagger-3">
+      <span class="fc-year">2028 — VISION</span>
+      <h4>Ambient Clinical Intelligence</h4>
+      <p>Ambient voice AI in consultation rooms — real-time clinical note generation, auto-coding, and care gap alerts without any keyboard interaction.</p>
+    </div>
+    <div class="future-card fade-up stagger-4">
+      <span class="fc-year">2028 — VISION</span>
+      <h4>National Cancer Intelligence Platform</h4>
+      <p>AI-aggregated oncology outcomes across India's hospital network — powering ICMR research, NCI benchmarking, and national cancer policy with real-world data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY SKCORE ────────────────────────────────────────────────────────── -->
+<section class="why-section" id="why">
+  <div class="fade-up" style="max-width:600px;margin-bottom:48px">
+    <span class="eyebrow eyebrow-blue">Why SKCore</span>
+    <h2>Built for India. Ready for the World.</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-up stagger-1">
+      <div class="why-icon">🇮🇳</div>
+      <h4>India-First Architecture</h4>
+      <p>Designed from the ground up for Indian regulatory requirements — ABDM, DPDP Act 2023, NABH, NABL, CDSCO SaMD, NCG guidelines, and ICMR compliance built in, not bolted on.</p>
+    </div>
+    <div class="why-card fade-up stagger-2">
+      <div class="why-icon">🔓</div>
+      <h4>Open Standards, No Lock-In</h4>
+      <p>FHIR R4, mCODE STU4, HL7 v2.7, DICOM, SMART on FHIR, and ABDM — every interface is based on open standards so you can integrate any system, past or future.</p>
+    </div>
+    <div class="why-card fade-up stagger-3">
+      <div class="why-icon">⚡</div>
+      <h4>AI That Earns Trust</h4>
+      <p>Advisory-only AI with full auditability — clinicians always decide, AI always explains its reasoning, and every suggestion is logged. Zero autonomous clinical actions.</p>
+    </div>
+  </div>
+  <div class="compliance-badges fade-up" style="margin-top:48px">
+    <span class="badge"><span class="badge-dot"></span>ABDM Certified HIU + HIP</span>
+    <span class="badge"><span class="badge-dot"></span>FHIR R4 + mCODE STU4</span>
+    <span class="badge"><span class="badge-dot"></span>DPDP Act 2023</span>
+    <span class="badge"><span class="badge-dot"></span>NABH Ready</span>
+    <span class="badge"><span class="badge-dot"></span>NABL Audit Trail</span>
+    <span class="badge"><span class="badge-dot"></span>CDSCO SaMD</span>
+    <span class="badge"><span class="badge-dot"></span>ISO 27001 Architecture</span>
+    <span class="badge"><span class="badge-dot"></span>HL7 v2.7</span>
+    <span class="badge"><span class="badge-dot"></span>QOPI Quality Measures</span>
+  </div>
+</section>
+
+<!-- ── CONTACT / CTA ─────────────────────────────────────────────────────── -->
+<section class="cta-section" id="contact">
+  <span class="eyebrow eyebrow-cyan fade-up">Get Started</span>
+  <h2 class="fade-up">Ready to Transform Your Healthcare Delivery?</h2>
+  <p class="fade-up">Book a personalised demo, start a consulting engagement, or explore which SKCore products fit your organisation.</p>
+  <div class="cta-actions fade-up">
+    <a class="btn btn-primary" href="mailto:demo@skcorehealth.com">Book a Demo →</a>
+    <a class="btn btn-outline" href="services.html">Explore Services</a>
+  </div>
+  <div class="contact-grid fade-up">
+    <div class="contact-card">
+      <h5>Product Demos</h5>
+      <a href="mailto:demo@skcorehealth.com">demo@skcorehealth.com</a>
+      <p>Schedule a live walkthrough of any SKCore product — tailored to your clinical specialty and hospital size.</p>
+    </div>
+    <div class="contact-card">
+      <h5>Consulting &amp; IT Enablement</h5>
+      <a href="mailto:consulting@skcorehealth.com">consulting@skcorehealth.com</a>
+      <p>NABH prep, ABDM integration, AI strategy, cybersecurity, and full digital hospital design.</p>
+    </div>
+    <div class="contact-card">
+      <h5>General Enquiries</h5>
+      <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a>
+      <a href="mailto:contact@skcorehealth.com">contact@skcorehealth.com</a>
+      <p>Partnerships, press, and investor relations welcome.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/">
+        <div class="brand-mark">SK</div>
+        <div class="brand-text"><strong>SKCore</strong><small>Health Technologies</small></div>
+      </a>
+      <p>AI-enabled healthcare products, IT enablement, and consulting services — purpose-built for the future of Indian healthcare.</p>
+      <p style="margin-top:10px;font-size:12px;color:#4a6a7a">SKCore Health Technologies Pvt. Ltd.<br/>© <span class="js-year"></span> All rights reserved.</p>
+    </div>
+    <div class="footer-col">
+      <h6>Products</h6>
+      <a href="products/coms.html">SKCore COMS</a>
+      <a href="products/phr.html">SKCore PHR</a>
+      <a href="products/mha.html">SKCore MHA</a>
+      <a href="products/lis.html">SKCore LIS</a>
+      <a href="products/ris.html">SKCore RIS</a>
+      <a href="products/cybersecure.html">SKCore CyberSecure</a>
+      <a href="products/connect.html">SKCore Connect</a>
+      <a href="products/ai-governance.html">AI Governance</a>
+      <a href="products/compliances.html">Compliances</a>
+    </div>
+    <div class="footer-col">
+      <h6>Services</h6>
+      <a href="services.html">IT Enablement</a>
+      <a href="services.html#consulting">Consulting</a>
+      <a href="services.html#abdm">ABDM Integration</a>
+      <a href="services.html#ai-strategy">AI Strategy</a>
+      <a href="services.html#cybersecurity">Cybersecurity</a>
+      <a href="services.html#training">Training</a>
+    </div>
+    <div class="footer-col">
+      <h6>Company</h6>
+      <a href="about.html">About SKCore</a>
+      <a href="about.html#mission">Mission</a>
+      <a href="#future">AI Roadmap</a>
+      <a href="mailto:info@skcorehealth.com">Contact</a>
+      <a href="mailto:privacy@skcorehealth.com">Privacy Policy</a>
+      <a href="mailto:security@skcorehealth.com">Security</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span class="js-year"></span> SKCore Health Technologies Pvt. Ltd. All rights reserved.</p>
+    <p>ABDM Certified · FHIR R4 · DPDP 2023 · NABH Ready · AI Governed</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
