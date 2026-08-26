@@ -1,4 +1,4 @@
-# SKCore Health Technologies — Website
+# SKCore Health Technologies
 
 **skcorehealth.com** · AI-enabled healthcare products, IT enablement, and consulting services.
 
