@@ -361,7 +361,7 @@ function closePolicy(id) {
   document.body.style.overflow = '';
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+function initPolicies() {
 
   /* Close buttons */
   document.querySelectorAll('[data-pol-close]').forEach(function (btn) {
@@ -409,4 +409,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-});
+}
+
+// Safe init — works whether DOM is already ready or not
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPolicies);
+} else {
+  initPolicies();
+}

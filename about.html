@@ -61,6 +61,92 @@
     </div>
   </div>
 </section>
+<!-- ── OUR PURPOSE ─────────────────────────────────────────────────── -->
+<section style="padding:96px clamp(24px,7vw,120px);background:var(--ink);overflow:hidden;position:relative">
+
+  <!-- subtle radial glow -->
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 70% 50%,rgba(13,114,174,.18) 0%,transparent 70%);pointer-events:none"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1">
+
+    <!-- Left: copy -->
+    <div class="fade-up">
+      <span class="eyebrow eyebrow-cyan" style="letter-spacing:.18em;font-size:11px">OUR PURPOSE</span>
+      <h2 style="color:#fff;font-size:clamp(26px,3.5vw,40px);line-height:1.2;margin:16px 0 20px">One connected health journey —<br/><span style="color:var(--cyan2)">across people, providers, and places.</span></h2>
+      <p style="color:rgba(255,255,255,.65);font-size:16px;line-height:1.75;margin-bottom:32px">When health information and care workflows are fragmented, patients repeat their story, providers lose time, and communities with fewer resources carry the greatest burden. SKCore is working toward a more connected healthcare ecosystem.</p>
+
+      <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:28px;margin-top:4px">
+        <p style="font-family:Manrope,sans-serif;font-size:10px;font-weight:800;letter-spacing:.18em;color:var(--cyan2);text-transform:uppercase;margin-bottom:14px">Starting with a clear mission</p>
+        <p style="color:rgba(255,255,255,.85);font-size:17px;font-weight:600;line-height:1.6;margin-bottom:24px">More connected care. More informed communities. Better access for everyone.</p>
+        <p style="color:rgba(255,255,255,.55);font-size:14px;line-height:1.7;margin-bottom:28px">We are shaping SKCore with healthcare providers, communities, and technology partners in mind. If you share this vision, we would like to hear from you.</p>
+        <a href="#" class="btn btn-primary" data-modal="contact" style="display:inline-flex;align-items:center;gap:8px">Start a conversation →</a>
+      </div>
+    </div>
+
+    <!-- Right: connected-node diagram -->
+    <div class="fade-up" style="display:flex;align-items:center;justify-content:center">
+      <div style="position:relative;width:340px;height:340px">
+
+        <!-- SVG connecting lines -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- lines from centre (170,170) to each node centre -->
+          <line x1="170" y1="170" x2="170" y2="52"  stroke="rgba(82,212,223,.25)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="170" y1="170" x2="52"  y2="270" stroke="rgba(82,212,223,.25)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="170" y1="170" x2="288" y2="270" stroke="rgba(82,212,223,.25)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <!-- outer ring arc suggestion -->
+          <circle cx="170" cy="170" r="128" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        </svg>
+
+        <!-- Centre node: SKCore -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+          width:100px;height:100px;border-radius:50%;
+          background:linear-gradient(135deg,#0d72ae,#52d4df);
+          display:flex;flex-direction:column;align-items:center;justify-content:center;
+          box-shadow:0 0 40px rgba(82,212,223,.35);z-index:2;text-align:center">
+          <span style="font-family:Manrope,sans-serif;font-size:13px;font-weight:800;color:#fff">SKCore</span>
+          <span style="font-size:10px;color:rgba(255,255,255,.75);margin-top:2px">Connected care</span>
+        </div>
+
+        <!-- Node 1: Local Clinic (top) -->
+        <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);
+          background:rgba(255,255,255,.06);border:1px solid rgba(82,212,223,.3);
+          border-radius:16px;padding:14px 18px;text-align:center;width:120px;backdrop-filter:blur(8px)">
+          <div style="font-size:20px;margin-bottom:4px">✚</div>
+          <div style="font-family:Manrope,sans-serif;font-size:11px;font-weight:700;color:#fff">Local Clinic</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:2px">Care closer to home</div>
+        </div>
+
+        <!-- Node 2: Care Network (bottom-left) -->
+        <div style="position:absolute;bottom:8px;left:8px;
+          background:rgba(255,255,255,.06);border:1px solid rgba(82,212,223,.3);
+          border-radius:16px;padding:14px 18px;text-align:center;width:120px;backdrop-filter:blur(8px)">
+          <div style="font-size:20px;margin-bottom:4px">⌁</div>
+          <div style="font-family:Manrope,sans-serif;font-size:11px;font-weight:700;color:#fff">Care Network</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:2px">Connected information</div>
+        </div>
+
+        <!-- Node 3: Individual (bottom-right) -->
+        <div style="position:absolute;bottom:8px;right:8px;
+          background:rgba(255,255,255,.06);border:1px solid rgba(82,212,223,.3);
+          border-radius:16px;padding:14px 18px;text-align:center;width:120px;backdrop-filter:blur(8px)">
+          <div style="font-size:20px;margin-bottom:4px">●</div>
+          <div style="font-family:Manrope,sans-serif;font-size:11px;font-weight:700;color:#fff">Individual</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:2px">One health journey</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive: stack on mobile -->
+  <style>
+    @media(max-width:768px){
+      #purpose-grid{grid-template-columns:1fr !important}
+      #purpose-grid .purpose-diagram{display:none}
+    }
+  </style>
+</section>
+
 <section style="padding:80px clamp(24px,7vw,120px);background:#fff" id="mission">
   <div class="fade-up" style="max-width:700px;margin-bottom:48px">
     <span class="eyebrow eyebrow-blue">What We Do</span>

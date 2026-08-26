@@ -234,7 +234,7 @@ function closeModal(id) {
 /* ══════════════════════════════════════════════════════════════════════
    WIRE-UP
 ═══════════════════════════════════════════════════════════════════════ */
-document.addEventListener('DOMContentLoaded', function () {
+function initForms() {
 
   /* Close buttons (data-close attribute) */
   document.querySelectorAll('.skc-close').forEach(function (btn) {
@@ -279,8 +279,10 @@ document.addEventListener('DOMContentLoaded', function () {
                       txt.includes('enquiry') || txt.includes('talk to us') ||
                       txt.includes('send message') || txt.includes('send us') ||
                       txt.includes('consulting') || txt.includes('engagement') ||
+                      txt.includes('conversation') || txt.includes('start a') ||
                       href.includes('mailto:info@') || href.includes('mailto:contact@') ||
-                      href.includes('mailto:consulting@')
+                      href.includes('mailto:consulting@') ||
+                      el.dataset.modal === 'contact'
                     ));
 
     // Intercept href="#contact" or href containing #contact (e.g. ../index.html#contact)
@@ -423,4 +425,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 4000);
   }
 
-});
+}
+
+// Safe init — works whether DOM is already ready or not
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initForms);
+} else {
+  initForms();
+}
