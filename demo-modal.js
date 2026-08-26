@@ -5,7 +5,7 @@
  * Configuration — paste your Google Apps Script Web App URL below.
  * One URL handles both form types (type field differentiates them).
  */
-const FORMS_ENDPOINT = ''; // paste your Apps Script URL here
+const FORMS_ENDPOINT = https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLugKqLFAY09XXIs6NIaan8JP0HMyrknyzRIerHh6LTA8OAxlpXc6hC/exec; // paste your Apps Script URL here
 
 /* ══════════════════════════════════════════════════════════════════════
    STYLES
