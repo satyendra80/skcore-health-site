@@ -258,48 +258,50 @@ function initForms() {
     }
   });
 
-  /* ── Smart link routing ─────────────────────────────────────────── */
-  // Classify all anchor/button elements and route to the right modal.
-  // Priority: explicit data-modal attr > text content keywords
-  document.querySelectorAll('a, button').forEach(function (el) {
-    var txt     = (el.textContent || '').trim().toLowerCase();
-    var href    = el.getAttribute('href') || '';
-    var explicit = el.dataset.modal; // data-modal="demo" or data-modal="contact"
-
-    var isDemo    = explicit === 'demo'    || (!explicit && (
-                      txt.includes('demo') || txt.includes('book a demo') ||
-                      txt.includes('book demo') || txt.includes('request demo') ||
-                      txt.includes('schedule demo') ||
-                      href.includes('#demo') ||
-                      href.includes('mailto:demo@')
-                    ));
-    var isContact = explicit === 'contact' || (!explicit && !isDemo && (
-                      txt.includes('contact') || txt.includes('get in touch') ||
-                      txt.includes('reach out') || txt.includes('inquiry') ||
-                      txt.includes('enquiry') || txt.includes('talk to us') ||
-                      txt.includes('send message') || txt.includes('send us') ||
-                      txt.includes('consulting') || txt.includes('engagement') ||
-                      txt.includes('conversation') || txt.includes('start a') ||
-                      href.includes('mailto:info@') || href.includes('mailto:contact@') ||
-                      href.includes('mailto:consulting@') ||
-                      el.dataset.modal === 'contact'
-                    ));
-
-    // Intercept href="#contact" or href containing #contact (e.g. ../index.html#contact)
-    if (!isDemo && !isContact) {
-      if (href.includes('#contact')) isContact = true;
+  /* ── Global delegated click router ─────────────────────────────── */
+  // One listener on document catches every click — no per-element binding,
+  // works for any element present now or added later, fires before mailto.
+  document.addEventListener('click', function (e) {
+    // Walk up from the click target to find the nearest <a> or <button>
+    var el = e.target;
+    while (el && el !== document.body) {
+      if (el.tagName === 'A' || el.tagName === 'BUTTON') break;
+      el = el.parentElement;
     }
+    if (!el || (el.tagName !== 'A' && el.tagName !== 'BUTTON')) return;
+
+    // Skip if it's inside a modal (form buttons, close buttons, etc.)
+    if (el.closest('#demo-overlay, #contact-overlay')) return;
+
+    var txt      = (el.textContent || '').trim().toLowerCase();
+    var href     = (el.getAttribute('href') || '').toLowerCase();
+    var modalAttr = el.getAttribute('data-modal') || '';
+
+    var isDemo = modalAttr === 'demo' || (
+      txt.includes('demo') || txt.includes('book a demo') ||
+      txt.includes('book demo') || txt.includes('request demo') ||
+      txt.includes('schedule demo') ||
+      href.includes('#demo') || href.includes('mailto:demo@')
+    );
+
+    var isContact = !isDemo && (
+      modalAttr === 'contact' ||
+      txt.includes('contact') || txt.includes('get in touch') ||
+      txt.includes('reach out') || txt.includes('inquiry') ||
+      txt.includes('enquiry') || txt.includes('talk to us') ||
+      txt.includes('send message') || txt.includes('send us') ||
+      txt.includes('consulting') || txt.includes('engagement') ||
+      txt.includes('conversation') || txt.includes('start a') ||
+      href.includes('mailto:info@') || href.includes('mailto:contact@') ||
+      href.includes('mailto:consulting@') || href.includes('#contact')
+    );
 
     if (isDemo) {
-      el.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal('demo-overlay');
-      });
+      e.preventDefault();
+      openModal('demo-overlay');
     } else if (isContact) {
-      el.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal('contact-overlay');
-      });
+      e.preventDefault();
+      openModal('contact-overlay');
     }
   });
 
