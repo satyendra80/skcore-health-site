@@ -153,7 +153,7 @@
           <li><strong>Grievance redressal</strong> — raise a complaint with our Data Protection Officer; we will respond within 72 hours.</li>
           <li><strong>Nominate</strong> — nominate another individual to exercise rights on your behalf in the event of death or incapacity.</li>
         </ul>
-        <p>To exercise any right, email: <a href="mailto:privacy@skcorehealth.com">privacy@skcorehealth.com</a></p>
+        <p>To exercise any right, email: <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a></p>
 
         <h3>7. Security of Your Data</h3>
         <p>We implement administrative, technical, and physical safeguards including AES-256 encryption at rest, TLS 1.3 in transit, role-based access control, and continuous security monitoring. Please refer to our <strong>Security Policy</strong> for full details.</p>
@@ -172,7 +172,7 @@
           <strong>Data Protection Officer</strong><br/>
           SKCore Health Technologies Pvt. Ltd.<br/>
           Bangalore, Karnataka, India<br/>
-          Email: <a href="mailto:privacy@skcorehealth.com">privacy@skcorehealth.com</a><br/>
+          Email: <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a><br/>
           Response time: within 72 hours of receipt.
         </p>
         <p>If you are not satisfied with our response, you may lodge a complaint with the <strong>Data Protection Board of India</strong> once it is constituted under the DPDP Act 2023.</p>
@@ -180,7 +180,7 @@
       </div>
       <div class="pol-footer-bar">
         <span>© 2026 SKCore Health Technologies Pvt. Ltd. All rights reserved.</span>
-        <a href="mailto:privacy@skcorehealth.com">privacy@skcorehealth.com</a>
+        <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a>
       </div>
     </div>
   </div>
@@ -327,21 +327,21 @@
         </ul>
 
         <h3>12. Responsible Disclosure</h3>
-        <p>We welcome security researchers to responsibly disclose vulnerabilities. If you discover a security issue in any SKCore product, please email <a href="mailto:security@skcorehealth.com">security@skcorehealth.com</a> with details. We commit to acknowledging your report within 24 hours and providing a remediation timeline within 72 hours. We do not pursue legal action against good-faith security research.</p>
+        <p>We welcome security researchers to responsibly disclose vulnerabilities. If you discover a security issue in any SKCore product, please email <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a> with details. We commit to acknowledging your report within 24 hours and providing a remediation timeline within 72 hours. We do not pursue legal action against good-faith security research.</p>
 
         <h3>13. Contact</h3>
         <p>
           <strong>Chief Information Security Officer (CISO)</strong><br/>
           SKCore Health Technologies Pvt. Ltd.<br/>
           Bangalore, Karnataka, India<br/>
-          Email: <a href="mailto:security@skcorehealth.com">security@skcorehealth.com</a><br/>
+          Email: <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a><br/>
           PGP key available on request.
         </p>
 
       </div>
       <div class="pol-footer-bar">
         <span>© 2026 SKCore Health Technologies Pvt. Ltd. All rights reserved.</span>
-        <a href="mailto:security@skcorehealth.com">security@skcorehealth.com</a>
+        <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a>
       </div>
     </div>
   </div>`;
