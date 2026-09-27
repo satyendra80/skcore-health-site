@@ -17,6 +17,14 @@
  *    b) tracker.js     → TRACKER_ENDPOINT (line 13) — for visitor tracking
  * 7. Commit and push — data now flows to Google Sheets automatically.
  *
+ * ── IMPORTANT WHEN YOU CHANGE THIS SCRIPT ───────────────────────────────
+ *  Saving is not enough. Use Deploy → Manage deployments → ✏️ Edit →
+ *  Version: "New version" → Deploy. This keeps the SAME /exec URL.
+ *  ("New deployment" creates a NEW URL, which must then be pasted into
+ *  demo-modal.js and tracker.js.)
+ *  First run: in the editor choose the function "setup" and click Run once
+ *  to grant Sheets/Mail permissions.
+ *
  * ── THREE SHEETS CREATED AUTOMATICALLY ─────────────────────────────────
  *   "Demo Requests"   — Book a Demo form submissions  (POST)
  *   "Contact Leads"   — Get in Touch form submissions (POST)
@@ -26,52 +34,73 @@
  * ────────────────────────────────────────────────────────────────────────
  */
 
+// Optional: paste the Google Sheet ID here if this script is NOT created from
+// inside the sheet (Extensions → Apps Script). Leave '' for a bound script.
+var SHEET_ID = '';
+// Optional: an email address to be notified of every new demo/contact lead.
+var NOTIFY_EMAIL = '';
+
 var SHEET_DEMO    = 'Demo Requests';
 var SHEET_CONTACT = 'Contact Leads';
 var SHEET_VISITS  = 'Site Visitors';
 
-var HEADERS_DEMO    = ['Timestamp','Name','Organisation','Phone','Email','Product','Message'];
-var HEADERS_CONTACT = ['Timestamp','Name','Organisation','Email','Phone','Subject','Message'];
+var HEADERS_DEMO    = ['Timestamp','Name','Organisation','Phone','Email','Product','Message','Consent','Page'];
+var HEADERS_CONTACT = ['Timestamp','Name','Organisation','Email','Phone','Subject','Message','Consent','Page'];
 var HEADERS_VISITS  = ['Timestamp','Page Title','URL Path','Referrer','Screen','Language'];
 
-/** Handles POST from the website forms (demo & contact) */
+function json_(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+/** Stops spreadsheet formula injection and trims over-long input. */
+function clean_(v, max) {
+  var s = String(v == null ? '' : v).slice(0, max || 2000);
+  return /^[=+\-@\t\r]/.test(s) ? "'" + s : s;
+}
+
+/** Handles POST from the website forms (demo & contact).
+ *  The site sends JSON as text/plain to avoid a CORS pre-flight. */
 function doPost(e) {
+  var lock = LockService.getScriptLock();
   try {
+    if (!e || !e.postData || !e.postData.contents) return json_({ status: 'error', message: 'Empty request' });
     var data = JSON.parse(e.postData.contents);
-    var type = (data.type || 'demo').toLowerCase();
 
+    // Honeypot: real visitors never fill the hidden "website" field.
+    if (data.website) return json_({ status: 'ok' });
+
+    var type = String(data.type || '').toLowerCase();
+    if (type !== 'demo' && type !== 'contact') return json_({ status: 'error', message: 'Unknown form type' });
+    if (!data.name || !data.email) return json_({ status: 'error', message: 'Missing required fields' });
+
+    lock.waitLock(10000);
+    var ts = Utilities.formatDate(new Date(), 'Asia/Kolkata', 'yyyy-MM-dd HH:mm:ss') + ' IST';
+    var row, sheet;
     if (type === 'contact') {
-      var sheet = getOrCreateSheet(SHEET_CONTACT, HEADERS_CONTACT, '#061a2d');
-      sheet.appendRow([
-        data.timestamp    || new Date().toISOString(),
-        data.name         || '',
-        data.organisation || '',
-        data.email        || '',
-        data.phone        || '',
-        data.subject      || '',
-        data.message      || ''
-      ]);
+      sheet = getOrCreateSheet(SHEET_CONTACT, HEADERS_CONTACT, '#061a2d');
+      row = [ts, clean_(data.name, 200), clean_(data.organisation, 200), clean_(data.email, 200),
+             clean_(data.phone, 50), clean_(data.subject, 200), clean_(data.message), clean_(data.consent, 10), clean_(data.page, 200)];
     } else {
-      var sheet = getOrCreateSheet(SHEET_DEMO, HEADERS_DEMO, '#0b2840');
-      sheet.appendRow([
-        data.timestamp    || new Date().toISOString(),
-        data.name         || '',
-        data.organisation || '',
-        data.phone        || '',
-        data.email        || '',
-        data.product      || '',
-        data.message      || ''
-      ]);
+      sheet = getOrCreateSheet(SHEET_DEMO, HEADERS_DEMO, '#0b2840');
+      row = [ts, clean_(data.name, 200), clean_(data.organisation, 200), clean_(data.phone, 50),
+             clean_(data.email, 200), clean_(data.product, 200), clean_(data.message), clean_(data.consent, 10), clean_(data.page, 200)];
     }
+    sheet.appendRow(row);
+    SpreadsheetApp.flush();
 
-    return ContentService
-      .createTextOutput(JSON.stringify({ status: 'ok' }))
-      .setMimeType(ContentService.MimeType.JSON);
+    if (NOTIFY_EMAIL) {
+      try {
+        MailApp.sendEmail(NOTIFY_EMAIL, 'New SKCore ' + type + ' request — ' + data.name,
+          (type === 'contact' ? HEADERS_CONTACT : HEADERS_DEMO).map(function (h, i) { return h + ': ' + row[i]; }).join('\n'));
+      } catch (mailErr) { /* never fail the submission because of email */ }
+    }
+    return json_({ status: 'ok' });
 
   } catch (err) {
-    return ContentService
-      .createTextOutput(JSON.stringify({ status: 'error', message: err.message }))
-      .setMimeType(ContentService.MimeType.JSON);
+    return json_({ status: 'error', message: err.message });
+  } finally {
+    try { lock.releaseLock(); } catch (_) {}
   }
 }
 
@@ -114,7 +143,8 @@ function doGet(e) {
 
 /** Returns sheet by name, creating it with styled headers if missing */
 function getOrCreateSheet(name, headers, headerBg) {
-  var ss    = SpreadsheetApp.getActiveSpreadsheet();
+  var ss    = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss) throw new Error('No spreadsheet: set SHEET_ID or create the script from inside the sheet');
   var sheet = ss.getSheetByName(name);
 
   if (!sheet) {
@@ -129,7 +159,19 @@ function getOrCreateSheet(name, headers, headerBg) {
                .setFontColor('#ffffff');
     sheet.setFrozenRows(1);
     sheet.autoResizeColumns(1, headers.length);
+  } else if (sheet.getLastColumn() < headers.length) {
+    // Older sheet: add any new header columns (e.g. Consent, Page)
+    sheet.getRange(1, 1, 1, headers.length).setValues([headers])
+         .setFontWeight('bold').setBackground(headerBg).setFontColor('#ffffff');
   }
 
   return sheet;
+}
+
+/** Run once from the Apps Script editor to authorise and create the tabs. */
+function setup() {
+  getOrCreateSheet(SHEET_DEMO, HEADERS_DEMO, '#0b2840');
+  getOrCreateSheet(SHEET_CONTACT, HEADERS_CONTACT, '#061a2d');
+  getOrCreateSheet(SHEET_VISITS, HEADERS_VISITS, '#0d3a1a');
+  Logger.log('SKCore collector ready.');
 }

@@ -276,3 +276,31 @@ footer{background:#061a2d;color:#fff;padding:64px clamp(24px,8vw,120px) 32px}
 }
 
 .brand-logo{width:38px;height:38px;border-radius:10px;object-fit:contain;flex-shrink:0;background:#fff}
+
+/* ── Investors, incubators & partners ── */
+.inv-section{background:var(--cream)}
+.inv-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.inv-fact{background:#fff;border:1px solid var(--line2);border-radius:var(--r-lg);padding:22px}
+.inv-fact strong{display:block;font:800 26px Manrope,sans-serif;color:var(--blue)}
+.inv-fact span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
+.inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.inv-card{background:#fff;border:1px solid var(--line2);border-radius:var(--r-lg);padding:26px}
+.inv-card h4{margin:0 0 14px}
+.inv-list{list-style:none;padding:0;margin:0}
+.inv-list li{font-size:14px;color:var(--muted);padding:8px 0;border-bottom:1px solid var(--line2);line-height:1.5}
+.inv-list li:last-child{border-bottom:none}
+.inv-list strong{color:var(--ink)}
+.inv-list a{color:var(--blue);font-size:12px}
+.inv-note{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.6}
+.inv-table{width:100%;border-collapse:collapse;font-size:13px}
+.inv-table th{text-align:left;color:var(--muted);font-weight:600;padding:6px 0;border-bottom:1px solid var(--line)}
+.inv-table td{padding:9px 8px 9px 0;border-bottom:1px solid var(--line2);color:var(--ink)}
+.inv-pill{display:inline-block;background:#e8f4ff;color:var(--blue);font-size:11px;font-weight:700;border-radius:20px;padding:3px 10px;white-space:nowrap}
+.inv-actions{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.inv-actions .btn{justify-content:center;text-align:center}
+.co-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+@media(max-width:1000px){.inv-grid{grid-template-columns:1fr}.inv-facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.inv-facts{grid-template-columns:1fr}}
+.co-facts .inv-fact strong{font-size:18px}
+.inv-actions .btn-outline{color:var(--blue);border:1.5px solid var(--blue);background:#fff}
+.inv-actions .btn-outline:hover{background:#e8f4ff}

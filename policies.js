@@ -91,9 +91,9 @@
         <p>SKCore Health Technologies Pvt. Ltd. (<strong>"SKCore"</strong>, <strong>"we"</strong>, <strong>"us"</strong>) is committed to protecting your personal data and health information. This Privacy Policy describes how we collect, use, share, and safeguard information when you interact with our products, website (<strong>skcorehealth.com</strong>), and services, in compliance with the <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong> and applicable healthcare regulations in India.</p>
 
         <div class="pol-badge-row">
-          <span class="pol-badge blue">DPDP Act 2023 Compliant</span>
+          <span class="pol-badge blue">Designed for DPDP Act 2023</span>
           <span class="pol-badge purple">ISO/IEC 27701:2019 PIMS</span>
-          <span class="pol-badge blue">ABDM Compliant</span>
+          <span class="pol-badge blue">ABDM Integration In Progress</span>
           <span class="pol-badge green">FHIR R4 Consent-Based Exchange</span>
           <span class="pol-badge green">No Data Sale</span>
         </div>
@@ -171,7 +171,7 @@
         <p>
           <strong>Data Protection Officer</strong><br/>
           SKCore Health Technologies Pvt. Ltd.<br/>
-          Bangalore, Karnataka, India<br/>
+          India<br/>
           Email: <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a><br/>
           Response time: within 72 hours of receipt.
         </p>
@@ -208,7 +208,7 @@
           <span class="pol-badge blue">AES-256 Encryption</span>
           <span class="pol-badge blue">TLS 1.3 In Transit</span>
           <span class="pol-badge green">Zero Trust Architecture</span>
-          <span class="pol-badge green">24×7 SOC Monitoring</span>
+          <span class="pol-badge green">Continuous Security Monitoring</span>
         </div>
 
         <h3>1. Security &amp; Quality Framework</h3>
@@ -276,7 +276,7 @@
         <h3>7. Incident Response</h3>
         <p>We maintain a documented Incident Response Plan tested via tabletop exercises twice a year:</p>
         <ul>
-          <li><strong>Detection</strong> — 24×7 SIEM monitoring with automated alerting for indicators of compromise.</li>
+          <li><strong>Detection</strong> — SIEM monitoring with automated alerting for indicators of compromise.</li>
           <li><strong>Containment</strong> — affected systems isolated within 15 minutes of confirmed incident.</li>
           <li><strong>Notification</strong> — affected organisations notified within 6 hours of a confirmed breach; CERT-In notified within 6 hours per IT Amendment Rules 2022.</li>
           <li><strong>Recovery</strong> — RTO (Recovery Time Objective) of 4 hours; RPO (Recovery Point Objective) of 1 hour for clinical data.</li>
@@ -318,12 +318,12 @@
         <ul>
           <li><strong>DPDP Act 2023</strong> — data fiduciary obligations, consent management, breach notification to Data Protection Board of India.</li>
           <li><strong>IT Act 2000 &amp; IT (Amendment) Rules 2022</strong> — reasonable security practices (RBAC, encryption, audit logs), 6-hour CERT-In breach reporting.</li>
-          <li><strong>ABDM Security Guidelines</strong> — HIU/HIP data handling, ABHA consent-bound token exchange, PHR security.</li>
+          <li><strong>ABDM Security Guidelines</strong> — health data handling, ABHA consent-bound token exchange, PHR security.</li>
           <li><strong>CDSCO SaMD Guidelines</strong> — software risk classification, design validation, post-market surveillance for AI-assisted clinical decision support.</li>
           <li><strong>NABH Standards</strong> — information security requirements for hospital accreditation (MOM.5, HIC standards).</li>
           <li><strong>NABL ISO 15189</strong> — quality and competence requirements for medical laboratories; applicable to SKCore LIS.</li>
           <li><strong>NCG Guidelines</strong> — National Cancer Grid data security, protocol integrity, and multi-centre trial data governance; applicable to COMS.</li>
-          <li><strong>NIST CSF 2.0</strong> — Identify, Protect, Detect, Respond, Recover functions used as the operational framework for our SOC.</li>
+          <li><strong>NIST CSF 2.0</strong> — Identify, Protect, Detect, Respond, Recover functions used as the operational framework for our security operations.</li>
         </ul>
 
         <h3>12. Responsible Disclosure</h3>
@@ -333,7 +333,7 @@
         <p>
           <strong>Chief Information Security Officer (CISO)</strong><br/>
           SKCore Health Technologies Pvt. Ltd.<br/>
-          Bangalore, Karnataka, India<br/>
+          India<br/>
           Email: <a href="mailto:info@skcorehealth.com">info@skcorehealth.com</a><br/>
           PGP key available on request.
         </p>

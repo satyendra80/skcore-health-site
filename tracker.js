@@ -8,7 +8,7 @@
  * ────────────────────────────────────────────────────────────────────────
  */
 (function () {
-  var TRACKER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLugKqLFAY09XXIs6NIaan8JP0HMyrknyzRIerHh6LTA8OAxlpXc6hC/exec';
+  var TRACKER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz-JkCwwDHOvw9feVnmen3ucz7xFhfqpAxs92OCnyW2HRgnVHL5W0vE02Cfm1nzjLa3/exec';
 
   if (!TRACKER_ENDPOINT) return;
 

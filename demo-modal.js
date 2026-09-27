@@ -5,7 +5,8 @@
  * Configuration — paste your Google Apps Script Web App URL below.
  * One URL handles both form types (type field differentiates them).
  */
-const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLugKqLFAY09XXIs6NIaan8JP0HMyrknyzRIerHh6LTA8OAxlpXc6hC/exec';
+	//const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz-JkCwwDHOvw9feVnmen3ucz7xFhfqpAxs92OCnyW2HRgnVHL5W0vE02Cfm1nzjLa3/exec';
+const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz-JkCwwDHOvw9feVnmen3ucz7xFhfqpAxs92OCnyW2HRgnVHL5W0vE02Cfm1nzjLa3/exec';
 
 /* ══════════════════════════════════════════════════════════════════════
    STYLES
@@ -70,6 +71,11 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLug
   .skc-success h3{color:#0b2840;font-family:Manrope,sans-serif;font-size:20px;margin:0 0 8px}
   .skc-success p{color:#4a5568;font-size:14px;margin:0}
 
+  .skc-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+  .skc-consent{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#4a5568;margin:4px 0 14px;line-height:1.5;font-weight:400}
+  .skc-consent input{margin-top:3px;flex-shrink:0;width:16px;height:16px}
+  .skc-consent a{color:#0d72ae}
+
   /* Badge strip */
   .skc-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:16px;
     border-top:1px solid #edf2f7}
@@ -92,7 +98,7 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLug
       <div class="skc-head demo-head">
         <button class="skc-close" data-close="demo-overlay" aria-label="Close">✕</button>
         <h2 id="dm-title">📅 Book a Product Demo</h2>
-        <p>Our team will reach out within one business day to schedule your personalised demo.</p>
+        <p>We will reply within one business day to schedule your personalised demo.</p>
       </div>
       <div class="skc-body">
         <form id="demo-form" novalidate>
@@ -103,7 +109,7 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLug
             </div>
             <div class="dm-field">
               <label for="dm-org">Organisation / Hospital <span class="req">*</span></label>
-              <input type="text" id="dm-org" name="organisation" placeholder="Apollo Hospitals" required/>
+              <input type="text" id="dm-org" name="organisation" placeholder="City Hospital" required/>
             </div>
           </div>
           <div class="dm-row">
@@ -125,6 +131,7 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLug
               <option>SKCore MHA — Mental Health</option>
               <option>SKCore LIS — Laboratory</option>
               <option>SKCore RIS — Radiology</option>
+              <option>SKCore BCMA — Barcode Medication Administration</option>
               <option>SKCore CyberSecure</option>
               <option>SKCore Connect — Interoperability</option>
               <option>AI Governance</option>
@@ -136,16 +143,18 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLug
             <label for="dm-msg">Message (optional)</label>
             <textarea id="dm-msg" name="message" placeholder="Tell us about your current setup or specific requirements…"></textarea>
           </div>
+          <input type="text" id="dm-hp" name="website" class="skc-hp" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+          <label class="skc-consent"><input type="checkbox" id="dm-consent"/> I agree that SKCore Health Technologies may store these details and contact me about this request, as described in the <a href="#" data-policy="privacy" data-modal="none">Privacy Policy</a>. <span class="req">*</span></label>
           <div class="skc-error" id="dm-error"></div>
           <button type="submit" class="skc-submit demo-btn" id="dm-submit">Request Demo →</button>
         </form>
         <div class="skc-success" id="dm-success">
           <div class="s-tick">✅</div>
           <h3>Demo Requested!</h3>
-          <p>Thank you. Our team will contact you within one business day to schedule your personalised walkthrough.</p>
+          <p>Thank you. We will contact you within one business day to schedule your personalised walkthrough.</p>
         </div>
         <div class="skc-badges">
-          <span class="skc-badge">🔒 DPDP 2023 Compliant</span>
+          <span class="skc-badge">🔒 DPDP Act 2023 Privacy-by-Design</span>
           <span class="skc-badge">📋 No obligation</span>
           <span class="skc-badge">⏱ 45-min session</span>
         </div>
@@ -194,12 +203,17 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLug
               <option>Consulting Services</option>
               <option>Media & Press</option>
               <option>Careers</option>
+              <option>Investor / Incubator Enquiry</option>
+              <option>Pilot Partnership</option>
+              <option>Grant / Incubation Programme</option>
             </select>
           </div>
           <div class="dm-field">
             <label for="ct-msg">Message <span class="req">*</span></label>
             <textarea id="ct-msg" name="message" placeholder="How can we help you?" required></textarea>
           </div>
+          <input type="text" id="ct-hp" name="website" class="skc-hp" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+          <label class="skc-consent"><input type="checkbox" id="ct-consent"/> I agree that SKCore Health Technologies may store these details and contact me about this request, as described in the <a href="#" data-policy="privacy" data-modal="none">Privacy Policy</a>. <span class="req">*</span></label>
           <div class="skc-error" id="ct-error"></div>
           <button type="submit" class="skc-submit contact-btn" id="ct-submit">Send Message →</button>
         </form>
@@ -209,7 +223,6 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLug
           <p>Thank you for reaching out. We'll get back to you within one business day.</p>
         </div>
         <div class="skc-badges">
-          <span class="skc-badge">📍 Bangalore, India</span>
           <span class="skc-badge">🕐 Mon–Sat 9am–6pm IST</span>
         </div>
       </div>
@@ -225,10 +238,27 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxPfV_QZW-HqkLug
 function openModal(id) {
   document.getElementById(id).classList.add('open');
   document.body.style.overflow = 'hidden';
+  var first = document.querySelector('#' + id + ' input:not([type=hidden]):not(.skc-hp)');
+  if (first) setTimeout(function () { first.focus(); }, 50);
 }
 function closeModal(id) {
   document.getElementById(id).classList.remove('open');
   document.body.style.overflow = '';
+}
+
+/* Pre-select a <select> option whose text contains the given phrase */
+function preselect(selectId, phrase) {
+  if (!phrase) return;
+  var sel = document.getElementById(selectId);
+  if (!sel) return;
+  var p = phrase.toLowerCase();
+  for (var i = 0; i < sel.options.length; i++) {
+    var t = sel.options[i].text.toLowerCase();
+    if (t && sel.options[i].value !== '' && (t.indexOf(p) !== -1 || p.indexOf(t.split(' —')[0]) !== -1)) {
+      sel.selectedIndex = i;
+      return;
+    }
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -236,71 +266,58 @@ function closeModal(id) {
 ═══════════════════════════════════════════════════════════════════════ */
 function initForms() {
 
-  /* Close buttons (data-close attribute) */
   document.querySelectorAll('.skc-close').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      closeModal(btn.dataset.close);
-    });
+    btn.addEventListener('click', function () { closeModal(btn.dataset.close); });
   });
 
-  /* Click-backdrop-to-close */
   ['demo-overlay', 'contact-overlay'].forEach(function (id) {
     document.getElementById(id).addEventListener('click', function (e) {
       if (e.target === this) closeModal(id);
     });
   });
 
-  /* Escape key */
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeModal('demo-overlay');
-      closeModal('contact-overlay');
-    }
+    if (e.key === 'Escape') { closeModal('demo-overlay'); closeModal('contact-overlay'); }
   });
 
   /* ── Global delegated click router ─────────────────────────────── */
-  // One listener on document catches every click — no per-element binding,
-  // works for any element present now or added later, fires before mailto.
+  // Priority: data-modal attribute ("demo" | "contact" | "none"), then
+  // demo/contact mailto links and #contact anchors, then button text.
   document.addEventListener('click', function (e) {
-    // Walk up from the click target to find the nearest <a> or <button>
     var el = e.target;
     while (el && el !== document.body) {
       if (el.tagName === 'A' || el.tagName === 'BUTTON') break;
       el = el.parentElement;
     }
     if (!el || (el.tagName !== 'A' && el.tagName !== 'BUTTON')) return;
-
-    // Skip if it's inside a modal (form buttons, close buttons, etc.)
     if (el.closest('#demo-overlay, #contact-overlay')) return;
 
-    var txt      = (el.textContent || '').trim().toLowerCase();
-    var href     = (el.getAttribute('href') || '').toLowerCase();
-    var modalAttr = el.getAttribute('data-modal') || '';
+    var modalAttr = (el.getAttribute('data-modal') || '').toLowerCase();
+    if (modalAttr === 'none') return;
 
-    var isDemo = modalAttr === 'demo' || (
-      txt.includes('demo') || txt.includes('book a demo') ||
-      txt.includes('book demo') || txt.includes('request demo') ||
-      txt.includes('schedule demo') ||
-      href.includes('#demo') || href.includes('mailto:demo@')
-    );
+    var txt  = (el.textContent || '').trim().toLowerCase();
+    var rawHref = el.getAttribute('href') || '';
+    var href = rawHref.toLowerCase();
+    var subjectFromHref = '';
+    try { var m = rawHref.match(/[?&]subject=([^&]+)/i); if (m) subjectFromHref = decodeURIComponent(m[1]); } catch (_) {}
 
-    var isContact = !isDemo && (
-      modalAttr === 'contact' ||
-      txt.includes('contact') || txt.includes('get in touch') ||
-      txt.includes('reach out') || txt.includes('inquiry') ||
-      txt.includes('enquiry') || txt.includes('talk to us') ||
-      txt.includes('send message') || txt.includes('send us') ||
-      txt.includes('consulting') || txt.includes('engagement') ||
-      txt.includes('conversation') || txt.includes('start a') ||
-      href.includes('mailto:info@') || href.includes('mailto:contact@') ||
-      href.includes('mailto:consulting@') || href.includes('#contact')
-    );
+    var isDemo = modalAttr === 'demo' || (!modalAttr && (
+      href.indexOf('mailto:demo@') === 0 || href.indexOf('#demo') !== -1 ||
+      /\b(book|request|schedule)\b.*\bdemo\b/.test(txt)
+    ));
+    var isContact = !isDemo && (modalAttr === 'contact' || (!modalAttr && (
+      href.indexOf('mailto:info@') === 0 || href.indexOf('mailto:contact@') === 0 ||
+      href.indexOf('mailto:consulting@') === 0 || href === '#contact' ||
+      /\b(get in touch|talk to us|start a conversation|send us a message)\b/.test(txt)
+    )));
 
     if (isDemo) {
       e.preventDefault();
+      preselect('dm-product', el.getAttribute('data-product') || (subjectFromHref.match(/SKCore\s+\w+/i) || [''])[0]);
       openModal('demo-overlay');
     } else if (isContact) {
       e.preventDefault();
+      preselect('ct-subject', el.getAttribute('data-subject') || subjectFromHref);
       openModal('contact-overlay');
     }
   });
@@ -308,32 +325,22 @@ function initForms() {
   /* ── Demo Form submit ───────────────────────────────────────────── */
   document.getElementById('demo-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    var errBox = document.getElementById('dm-error');
-    errBox.style.display = 'none';
+    hideError('dm-error');
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    var name = v('dm-name'), org = v('dm-org'), phone = v('dm-phone'), email = v('dm-email');
 
-    var name  = document.getElementById('dm-name').value.trim();
-    var org   = document.getElementById('dm-org').value.trim();
-    var phone = document.getElementById('dm-phone').value.trim();
-    var email = document.getElementById('dm-email').value.trim();
-    var prod  = document.getElementById('dm-product').value;
-    var msg   = document.getElementById('dm-msg').value.trim();
-
-    if (!name || !org || !phone || !email) {
-      return showError('dm-error', 'Please fill in all required fields.');
-    }
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      return showError('dm-error', 'Please enter a valid email address.');
-    }
+    if (!name || !org || !phone || !email) return showError('dm-error', 'Please fill in all required fields.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('dm-error', 'Please enter a valid email address.');
+    if (!/^[+\d][\d\s()-]{6,}$/.test(phone)) return showError('dm-error', 'Please enter a valid phone number.');
+    if (!document.getElementById('dm-consent').checked) return showError('dm-error', 'Please tick the consent box so we can contact you.');
 
     var payload = {
-      type: 'demo',
-      timestamp: new Date().toISOString(),
+      type: 'demo', timestamp: new Date().toISOString(),
       name: name, organisation: org, phone: phone, email: email,
-      product: prod || 'Not specified', message: msg
+      product: v('dm-product') || 'Not specified', message: v('dm-msg'),
+      consent: 'yes', page: location.pathname, website: v('dm-hp')
     };
-
-    disableBtn('dm-submit');
-    saveAndSubmit(payload, 'demo_leads', function () {
+    submitForm(payload, 'demo_leads', 'dm-submit', 'dm-error', function () {
       showSuccess('demo-form', 'dm-success', 'demo-overlay', 'dm-submit');
     });
   });
@@ -341,32 +348,22 @@ function initForms() {
   /* ── Contact Form submit ────────────────────────────────────────── */
   document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    var errBox = document.getElementById('ct-error');
-    errBox.style.display = 'none';
+    hideError('ct-error');
+    var v = function (id) { return (document.getElementById(id).value || '').trim(); };
+    var name = v('ct-name'), email = v('ct-email'), subject = v('ct-subject'), msg = v('ct-msg'), phone = v('ct-phone');
 
-    var name    = document.getElementById('ct-name').value.trim();
-    var org     = document.getElementById('ct-org').value.trim();
-    var email   = document.getElementById('ct-email').value.trim();
-    var phone   = document.getElementById('ct-phone').value.trim();
-    var subject = document.getElementById('ct-subject').value;
-    var msg     = document.getElementById('ct-msg').value.trim();
-
-    if (!name || !email || !subject || !msg) {
-      return showError('ct-error', 'Please fill in all required fields.');
-    }
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      return showError('ct-error', 'Please enter a valid email address.');
-    }
+    if (!name || !email || !subject || !msg) return showError('ct-error', 'Please fill in all required fields.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('ct-error', 'Please enter a valid email address.');
+    if (phone && !/^[+\d][\d\s()-]{6,}$/.test(phone)) return showError('ct-error', 'Please enter a valid phone number.');
+    if (!document.getElementById('ct-consent').checked) return showError('ct-error', 'Please tick the consent box so we can contact you.');
 
     var payload = {
-      type: 'contact',
-      timestamp: new Date().toISOString(),
-      name: name, organisation: org, email: email, phone: phone,
-      subject: subject, message: msg
+      type: 'contact', timestamp: new Date().toISOString(),
+      name: name, organisation: v('ct-org'), email: email, phone: phone,
+      subject: subject, message: msg,
+      consent: 'yes', page: location.pathname, website: v('ct-hp')
     };
-
-    disableBtn('ct-submit');
-    saveAndSubmit(payload, 'contact_leads', function () {
+    submitForm(payload, 'contact_leads', 'ct-submit', 'ct-error', function () {
       showSuccess('contact-form', 'ct-success', 'contact-overlay', 'ct-submit');
     });
   });
@@ -374,59 +371,81 @@ function initForms() {
   /* ══════════════════════════════════════════════════════════════════
      HELPERS
   ══════════════════════════════════════════════════════════════════ */
-  function showError(boxId, msg) {
+  function hideError(boxId) { document.getElementById(boxId).style.display = 'none'; }
+
+  function showError(boxId, msg, withEmail) {
     var box = document.getElementById(boxId);
     box.textContent = msg;
+    if (withEmail) {
+      box.appendChild(document.createTextNode(' You can also email us at '));
+      var a = document.createElement('a');
+      a.href = 'mailto:info@skcorehealth.com';
+      a.setAttribute('data-modal', 'none');
+      a.textContent = 'info@skcorehealth.com';
+      a.style.color = '#c53030';
+      box.appendChild(a);
+      box.appendChild(document.createTextNode('.'));
+    }
     box.style.display = 'block';
   }
 
-  function disableBtn(btnId) {
+  function setBtn(btnId, busy) {
     var btn = document.getElementById(btnId);
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
+    btn.disabled = busy;
+    btn.textContent = busy ? 'Sending…'
+      : (btn.classList.contains('demo-btn') ? 'Request Demo →' : 'Send Message →');
   }
 
-  function saveAndSubmit(payload, storageKey, onSuccess) {
-    // Always save to localStorage
+  // Apps Script web apps do not answer CORS pre-flight (OPTIONS) requests,
+  // so the body is sent as text/plain (a "simple" request, no pre-flight).
+  // The script still receives the JSON in e.postData.contents.
+  function submitForm(payload, storageKey, btnId, errId, onSuccess) {
+    setBtn(btnId, true);
     try {
       var existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
       existing.push(payload);
-      localStorage.setItem(storageKey, JSON.stringify(existing));
+      localStorage.setItem(storageKey, JSON.stringify(existing.slice(-20)));
     } catch (_) {}
 
-    // POST to Apps Script if configured
-    if (FORMS_ENDPOINT) {
-      fetch(FORMS_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(onSuccess)
-      .catch(onSuccess); // still succeed — localStorage has the data
-    } else {
-      onSuccess();
-    }
+    var fail = function () {
+      setBtn(btnId, false);
+      showError(errId, 'Sorry — we could not send your request right now. Please try again in a moment.', true);
+    };
+    if (!FORMS_ENDPOINT) return fail();
+
+    var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 20000);
+
+    fetch(FORMS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+      redirect: 'follow',
+      signal: ctrl ? ctrl.signal : undefined
+    })
+    .then(function (r) { return r.text(); })
+    .then(function (t) {
+      clearTimeout(timer);
+      var res = null;
+      try { res = JSON.parse(t); } catch (_) {}
+      if (res && res.status === 'ok') onSuccess(); else fail();
+    })
+    .catch(function () { clearTimeout(timer); fail(); });
   }
 
   function showSuccess(formId, successId, overlayId, btnId) {
-    document.getElementById(formId).style.display    = 'none';
+    document.getElementById(formId).style.display = 'none';
     document.getElementById(successId).style.display = 'block';
-
     setTimeout(function () {
       closeModal(overlayId);
       setTimeout(function () {
-        // Reset for next open
         document.getElementById(formId).reset();
-        document.getElementById(formId).style.display    = 'block';
+        document.getElementById(formId).style.display = 'block';
         document.getElementById(successId).style.display = 'none';
-        var btn = document.getElementById(btnId);
-        btn.disabled    = false;
-        btn.textContent = btn.classList.contains('demo-btn')
-          ? 'Request Demo →' : 'Send Message →';
+        setBtn(btnId, false);
       }, 400);
     }, 4000);
   }
-
 }
 
 // Safe init — works whether DOM is already ready or not
