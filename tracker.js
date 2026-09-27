@@ -17,7 +17,7 @@
       type   : 'visit',
       t      : new Date().toISOString(),
       title  : document.title || '',
-      url    : location.pathname || '/',
+      url    : (location.pathname || '/') + (location.search || ''),
       ref    : document.referrer || '',
       screen : (screen.width || '') + 'x' + (screen.height || ''),
       lang   : navigator.language || ''
