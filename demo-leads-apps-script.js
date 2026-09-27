@@ -96,7 +96,16 @@ function doPost(e) {
       row = [ts, clean_(data.name, 200), clean_(data.organisation, 200), clean_(data.phone, 50),
              clean_(data.email, 200), clean_(data.product, 200), clean_(data.message), clean_(data.consent, 10), clean_(data.page, 200)];
     }
-    sheet.appendRow(row);
+    var tabName = type === 'lead' ? SHEET_LEADS : (type === 'contact' ? SHEET_CONTACT : SHEET_DEMO);
+    try {
+      sheet.appendRow(row);
+    } catch (writeErr) {
+      // The main tab could not be written (e.g. protected range, table or
+      // data-validation rules on an older tab). Never lose the lead: save it
+      // to a fresh backup tab and note why.
+      var backup = getOrCreateSheet(tabName + ' (backup)', headersUsed.concat(['Note']), '#8a1c1c');
+      backup.appendRow(row.concat(['Main tab write failed: ' + writeErr.message]));
+    }
     SpreadsheetApp.flush();
 
     return json_({ status: 'ok' });
@@ -166,9 +175,15 @@ function getOrCreateSheet(name, headers, headerBg) {
     sheet.setFrozenRows(1);
     sheet.autoResizeColumns(1, headers.length);
   } else if (sheet.getLastColumn() < headers.length) {
-    // Older sheet: add any new header columns (e.g. Consent, Page)
-    sheet.getRange(1, 1, 1, headers.length).setValues([headers])
-         .setFontWeight('bold').setBackground(headerBg).setFontColor('#ffffff');
+    // Older sheet: add any new header columns (e.g. Consent, Page).
+    // Best effort only — never block a submission because of formatting.
+    try {
+      if (sheet.getMaxColumns() < headers.length) {
+        sheet.insertColumnsAfter(sheet.getMaxColumns(), headers.length - sheet.getMaxColumns());
+      }
+      sheet.getRange(1, 1, 1, headers.length).setValues([headers])
+           .setFontWeight('bold').setBackground(headerBg).setFontColor('#ffffff');
+    } catch (hdrErr) { /* ignore */ }
   }
 
   return sheet;

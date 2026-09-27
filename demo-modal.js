@@ -407,9 +407,10 @@ function initForms() {
       localStorage.setItem(storageKey, JSON.stringify(existing.slice(-20)));
     } catch (_) {}
 
-    var fail = function () {
+    var fail = function (detail) {
       setBtn(btnId, false);
-      showError(errId, 'Sorry — we could not send your request right now. Please try again in a moment.', true);
+      showError(errId, 'Sorry — we could not send your request right now. Please try again in a moment.' +
+        (detail ? ' (' + String(detail).slice(0, 120) + ')' : ''), true);
     };
     if (!FORMS_ENDPOINT) return fail();
 
@@ -428,9 +429,9 @@ function initForms() {
       clearTimeout(timer);
       var res = null;
       try { res = JSON.parse(t); } catch (_) {}
-      if (res && res.status === 'ok') onSuccess(); else fail();
+      if (res && res.status === 'ok') onSuccess(); else fail(res && res.message ? res.message : 'unexpected response');
     })
-    .catch(function () { clearTimeout(timer); fail(); });
+    .catch(function (e) { clearTimeout(timer); fail(e && e.name === 'AbortError' ? 'timed out' : 'network error'); });
   }
 
   function showSuccess(formId, successId, overlayId, btnId) {
