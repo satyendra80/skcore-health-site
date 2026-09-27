@@ -38,8 +38,6 @@
 // Optional: paste the Google Sheet ID here if this script is NOT created from
 // inside the sheet (Extensions → Apps Script). Leave '' for a bound script.
 var SHEET_ID = '';
-// Optional: an email address to be notified of every new demo/contact lead.
-var NOTIFY_EMAIL = '';
 
 var SHEET_DEMO    = 'Demo Requests';
 var SHEET_CONTACT = 'Contact Leads';
@@ -101,12 +99,6 @@ function doPost(e) {
     sheet.appendRow(row);
     SpreadsheetApp.flush();
 
-    if (NOTIFY_EMAIL) {
-      try {
-        MailApp.sendEmail(NOTIFY_EMAIL, 'New SKCore ' + type + ' request — ' + data.name,
-          headersUsed.map(function (h, i) { return h + ': ' + row[i]; }).join('\n'));
-      } catch (mailErr) { /* never fail the submission because of email */ }
-    }
     return json_({ status: 'ok' });
 
   } catch (err) {
