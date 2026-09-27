@@ -290,7 +290,11 @@ function initForms() {
       el = el.parentElement;
     }
     if (!el || (el.tagName !== 'A' && el.tagName !== 'BUTTON')) return;
-    if (el.closest('#demo-overlay, #contact-overlay')) return;
+    if (el.closest('#demo-overlay, #contact-overlay, .pol-overlay, #skl-card')) return;
+
+    // Privacy / Security policy links are handled by policies.js
+    var linkText = (el.textContent || '').trim().toLowerCase();
+    if (el.hasAttribute('data-policy') || /^(privacy( policy)?|security( policy)?)$/.test(linkText)) return;
 
     var modalAttr = (el.getAttribute('data-modal') || '').toLowerCase();
     if (modalAttr === 'none') return;
