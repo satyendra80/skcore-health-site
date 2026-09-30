@@ -161,7 +161,7 @@ section{padding:100px clamp(24px,7vw,120px)}
 .cc-icon{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;font-size:26px}
 
 /* ── Stats bar ── */
-.stats-bar{background:var(--navy);padding:40px clamp(24px,8vw,120px);display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+.stats-bar{background:var(--navy);padding:40px clamp(24px,8vw,120px);display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .stat-item{text-align:center;border-right:1px solid rgba(255,255,255,.1);padding-right:24px}
 .stat-item:last-child{border:none}
 .stat-num{font:800 36px Manrope;color:var(--cyan);display:block}
@@ -246,7 +246,7 @@ footer{background:#061a2d;color:#fff;padding:64px clamp(24px,8vw,120px) 32px}
   .ai-grid{grid-template-columns:1fr 1fr}
   .ai-principles{grid-template-columns:repeat(2,1fr)}
   .future-grid{grid-template-columns:repeat(2,1fr)}
-  .stats-bar{grid-template-columns:repeat(3,1fr)}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:900px){
