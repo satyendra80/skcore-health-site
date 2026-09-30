@@ -127,7 +127,7 @@ const FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz-JkCwwDHOvw9fe
             <select id="dm-product" name="product">
               <option value="">— Select a product —</option>
               <option>SKCore COMS — Oncology Management</option>
-              <option>SKCore PHR — Personal Health Record</option>
+              <option>SKCore PHR — Women's Health</option>
               <option>SKCore MHA — Mental Health</option>
               <option>SKCore LIS — Laboratory</option>
               <option>SKCore RIS — Radiology</option>
