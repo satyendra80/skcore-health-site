@@ -46,7 +46,7 @@ var SHEET_LEADS   = 'Visitor Leads';
 
 var HEADERS_DEMO    = ['Timestamp','Name','Organisation','Phone','Email','Product','Message','Consent','Page'];
 var HEADERS_CONTACT = ['Timestamp','Name','Organisation','Email','Phone','Subject','Message','Consent','Page'];
-var HEADERS_VISITS  = ['Timestamp','Page Title','URL Path','Referrer','Screen','Language','Consent','Visitor ID','Visit #','IP Address','City','Region','Country','Postal Code','Network / ISP','Timezone','Device','Browser'];
+var HEADERS_VISITS  = ['Timestamp','Page Title','URL Path','Referrer','Screen','Language','Consent','Visitor ID','Visit #','IP Address','City','Region','Country','Postal Code','Network / ISP','Timezone','Device','Browser','Traffic Source'];
 var HEADERS_LEADS   = ['Timestamp','Name','Email','Phone','Organisation','Interest','Consent','Page','Referrer'];
 
 function json_(obj) {
@@ -130,7 +130,7 @@ function doGet(e) {
         p('title'), p('url') || '/', p('ref', 500), p('screen', 20), p('lang', 20),
         p('consent', 12) || 'not recorded', p('vid', 60), p('visitNo', 8),
         p('ip', 60), p('city', 80), p('region', 80), p('country', 80), p('postal', 20),
-        p('org', 120), p('tz', 60), p('device', 60), p('browser', 40)
+        p('org', 120), p('tz', 60), p('device', 60), p('browser', 40), p('src', 80)
       ]);
     } catch (err) { /* silently fail — never block page load */ }
 

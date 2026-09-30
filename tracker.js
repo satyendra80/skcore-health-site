@@ -54,6 +54,25 @@
     try { return document.referrer ? new URL(document.referrer).hostname : ''; } catch (_) { return ''; }
   }
 
+  // Where the visit came from: search engine, social, direct, other site or campaign (utm_source)
+  function source() {
+    try {
+      var q = new URLSearchParams(location.search);
+      if (q.get('utm_source')) return 'Campaign: ' + q.get('utm_source') + (q.get('utm_medium') ? ' / ' + q.get('utm_medium') : '');
+      if (!document.referrer) return 'Direct / bookmark';
+      var h = new URL(document.referrer).hostname.replace(/^www\./, '');
+      if (h === location.hostname.replace(/^www\./, '')) return 'Internal';
+      var map = [[/(^|\.)google\./, 'Search: Google'], [/(^|\.)bing\.com$/, 'Search: Bing'], [/duckduckgo\.com$/, 'Search: DuckDuckGo'],
+        [/(^|\.)yahoo\./, 'Search: Yahoo'], [/yandex\./, 'Search: Yandex'], [/ecosia\.org$/, 'Search: Ecosia'], [/baidu\.com$/, 'Search: Baidu'],
+        [/(chatgpt\.com|openai\.com|perplexity\.ai|claude\.ai|gemini\.google\.com|copilot\.microsoft\.com)$/, 'AI assistant: ' + h],
+        [/(linkedin\.com|lnkd\.in)$/, 'Social: LinkedIn'], [/(facebook\.com|fb\.com|m\.facebook\.com)$/, 'Social: Facebook'],
+        [/(t\.co|twitter\.com|x\.com)$/, 'Social: X / Twitter'], [/instagram\.com$/, 'Social: Instagram'], [/(youtube\.com|youtu\.be)$/, 'Social: YouTube'],
+        [/(whatsapp\.com|wa\.me)$/, 'Social: WhatsApp'], [/(mail\.google\.com|outlook\.)/, 'Email']];
+      for (var i = 0; i < map.length; i++) if (map[i][0].test(h)) return map[i][1];
+      return 'Website: ' + h;
+    } catch (_) { return ''; }
+  }
+
   function device() {
     var ua = navigator.userAgent || '';
     var d = /iPad|Tablet/i.test(ua) ? 'Tablet' : /Mobi|Android|iPhone/i.test(ua) ? 'Mobile' : 'Desktop';
@@ -113,7 +132,7 @@
     var c = getConsent();
     if (!c) return;
     var base = { type: 'visit', t: new Date().toISOString(), title: document.title || '',
-                 url: (location.pathname || '/') + (location.search || ''), consent: c };
+                 url: (location.pathname || '/') + (location.search || ''), consent: c, src: source() };
     if (c === 'rejected') { base.ref = refDomain(); send(base); return; }
     var d = device();
     base.ref = document.referrer || '';
