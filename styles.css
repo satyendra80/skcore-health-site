@@ -280,6 +280,7 @@ footer{background:#061a2d;color:#fff;padding:64px clamp(24px,8vw,120px) 32px}
 /* ── Investors, incubators & partners ── */
 .inv-section{background:var(--cream)}
 .inv-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.inv-facts.inv-facts-3{grid-template-columns:repeat(3,1fr)}
 .inv-fact{background:#fff;border:1px solid var(--line2);border-radius:var(--r-lg);padding:22px}
 .inv-fact strong{display:block;font:800 26px Manrope,sans-serif;color:var(--blue)}
 .inv-fact span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
@@ -299,8 +300,8 @@ footer{background:#061a2d;color:#fff;padding:64px clamp(24px,8vw,120px) 32px}
 .inv-actions{display:flex;flex-direction:column;gap:10px;margin-top:18px}
 .inv-actions .btn{justify-content:center;text-align:center}
 .co-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-@media(max-width:1000px){.inv-grid{grid-template-columns:1fr}.inv-facts{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.inv-facts{grid-template-columns:1fr}}
+@media(max-width:1000px){.inv-grid{grid-template-columns:1fr}.inv-facts,.inv-facts.inv-facts-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.inv-facts,.inv-facts.inv-facts-3{grid-template-columns:1fr}}
 .co-facts .inv-fact strong{font-size:18px}
 .inv-actions .btn-outline{color:var(--blue);border:1.5px solid var(--blue);background:#fff}
 .inv-actions .btn-outline:hover{background:#e8f4ff}
