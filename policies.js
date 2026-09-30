@@ -105,7 +105,7 @@
           <li><strong>Health records</strong> (via hospital deployments) — patient demographics, diagnosis, treatment plans, lab results, prescriptions, and imaging metadata processed within our clinical products (COMS, PHR, LIS, RIS, MHA, etc.) on your organisation's infrastructure.</li>
           <li><strong>ABHA-linked data</strong> — health records accessed or shared through the Ayushman Bharat Health Account (ABHA) system with explicit patient consent under ABDM's Consent Manager framework.</li>
           <li><strong>Usage data</strong> — anonymised product usage analytics, error logs, and performance metrics collected within deployed instances.</li>
-          <li><strong>Website data</strong> — browser type, IP address, pages visited, and session duration collected via standard web server logs.</li>
+          <li><strong>Website analytics (only if you click “Accept”)</strong> — a random visitor ID stored in your browser, your IP address and the approximate location derived from it (city, region, country, postal code, network provider, timezone), device type, browser, screen size, language, pages visited, referring page and number of visits. If you click “Reject”, we record only an anonymous page view (page, title and referring website).</li>
         </ul>
 
         <h3>2. How We Use Your Data</h3>
@@ -159,7 +159,13 @@
         <p>We implement administrative, technical, and physical safeguards including AES-256 encryption at rest, TLS 1.3 in transit, role-based access control, and continuous security monitoring. Please refer to our <strong>Security Policy</strong> for full details.</p>
 
         <h3>8. Cookies</h3>
-        <p>Our website uses strictly necessary cookies for session management and no third-party tracking or advertising cookies. You may disable cookies in your browser without affecting core website functionality.</p>
+        <p>When you first visit, we ask you to <strong>Accept</strong> or <strong>Reject</strong> analytics. Nothing about your visit is recorded until you choose.</p>
+        <ul>
+          <li><strong>Accept</strong> — we store a random visitor ID and your choice in your browser's local storage, and look up the approximate location of your IP address using an IP-location service (ipapi.co, with GeoJS or ipwho.is as fallbacks). This helps us understand where our visitors come from and which pages are useful.</li>
+          <li><strong>Reject</strong> — we store only your choice, and record an anonymous page view with no IP address, location, visitor ID or device details.</li>
+          <li><strong>Change your mind</strong> — use “Cookie settings” at the bottom of any page. Rejecting deletes the visitor ID from your browser.</li>
+        </ul>
+        <p>Analytics records are kept in a private Google Sheet accessible only to SKCore, retained for up to 12 months, and never sold or used for advertising. We use no advertising cookies. To have your records deleted, email info@skcorehealth.com.</p>
 
         <h3>9. Children's Data</h3>
         <p>Our products are not directed to individuals under 18. Where paediatric health data is processed in clinical deployments, it is handled with enhanced safeguards and parental/guardian consent in accordance with the DPDP Act 2023.</p>
@@ -200,11 +206,7 @@
         <p>SKCore Health Technologies Pvt. Ltd. treats the security of clinical and personal data as a fundamental obligation. This Security Policy outlines the controls, practices, and standards we apply across all SKCore products and infrastructure to protect patient health information, organisational data, and system integrity.</p>
 
         <div class="pol-badge-row">
-          <span class="pol-badge purple">ISO/IEC 27001:2022</span>
-          <span class="pol-badge purple">ISO/IEC 27701:2019</span>
-          <span class="pol-badge purple">ISO 9001:2015</span>
-          <span class="pol-badge purple">ISO 13485:2016</span>
-          <span class="pol-badge purple">ISO 14001:2015</span>
+          <span class="pol-badge purple">ISO standards — aligned (see §1)</span>
           <span class="pol-badge blue">AES-256 Encryption</span>
           <span class="pol-badge blue">TLS 1.3 In Transit</span>
           <span class="pol-badge green">Zero Trust Architecture</span>
@@ -303,17 +305,7 @@
         <p>SKCore products are deployed on customer-controlled infrastructure or approved cloud providers. Where SKCore operates shared infrastructure, physical access controls include biometric entry, CCTV, and visitor logs.</p>
 
         <h3>11. Compliance &amp; Certifications</h3>
-        <p><strong>ISO Standards (aligned / in-progress certification):</strong></p>
-        <ul>
-          <li><strong>ISO/IEC 27001:2022</strong> — Information Security Management System</li>
-          <li><strong>ISO/IEC 27701:2019</strong> — Privacy Information Management System (PIMS)</li>
-          <li><strong>ISO 9001:2015</strong> — Quality Management System</li>
-          <li><strong>ISO 13485:2016</strong> — Medical Device Quality Management (for SaMD-classified modules)</li>
-          <li><strong>ISO 14001:2015</strong> — Environmental Management System</li>
-          <li><strong>ISO/IEC 27799:2016</strong> — Health Informatics Information Security</li>
-          <li><strong>IEC 62304:2006+AMD1</strong> — Medical Device Software Lifecycle Processes</li>
-          <li><strong>ISO 80001-1:2021</strong> — Risk Management for IT Networks with Medical Devices</li>
-        </ul>
+        <p><strong>ISO standards:</strong> the standards listed in Section 1 guide how we design and build our products. SKCore does not yet hold any ISO certification; certification will be pursued as products move to deployment.</p>
         <p><strong>Regulatory &amp; Statutory Compliance:</strong></p>
         <ul>
           <li><strong>DPDP Act 2023</strong> — data fiduciary obligations, consent management, breach notification to Data Protection Board of India.</li>

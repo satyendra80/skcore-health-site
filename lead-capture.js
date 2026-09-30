@@ -144,7 +144,7 @@
         if (fired) return; fired = true;
         window.removeEventListener('scroll', onScroll);
         // don't pop over an open demo/contact/policy modal
-        if (document.querySelector('.skc-overlay.open, .pol-overlay.open')) return;
+        if (document.querySelector('.skc-overlay.open, .pol-overlay.open, #skc-consent.show')) { fired = false; setTimeout(trigger, 15000); return; }
         open(true);
       };
       var onScroll = function () {
